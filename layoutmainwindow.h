@@ -11,6 +11,9 @@ class LayoutMainWindow : public QVBoxLayout
     public:
         LayoutMainWindow(QWidget *parent = nullptr);
 
+        Tab *tab() const;
+        ToolBar *toolBar() const;
+
     private:
         Tab *m_tab;
         ToolBar *m_toolBar;

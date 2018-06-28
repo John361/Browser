@@ -11,6 +11,8 @@ class Tab : public QTabWidget
     public:
         Tab(QWidget *parent = nullptr);
 
+        addTab(WebPage *page);
+
     private:
         QVector<WebPage> *m_pages;
 };
