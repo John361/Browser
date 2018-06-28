@@ -4,7 +4,6 @@
 #include <QVBoxLayout>
 
 #include "tab.h"
-#include "toolbar.h"
 
 class LayoutMainWindow : public QVBoxLayout
 {
@@ -12,11 +11,9 @@ class LayoutMainWindow : public QVBoxLayout
         LayoutMainWindow(QWidget *parent = nullptr);
 
         Tab *tab() const;
-        ToolBar *toolBar() const;
 
     private:
         Tab *m_tab;
-        ToolBar *m_toolBar;
 };
 
 #endif // LAYOUTMAINWINDOW_H

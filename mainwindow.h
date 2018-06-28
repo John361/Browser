@@ -5,6 +5,7 @@
 
 #include "layoutmainwindow.h"
 #include "menu.h"
+#include "toolbar.h"
 
 class MainWindow : public QMainWindow
 {
@@ -14,6 +15,7 @@ class MainWindow : public QMainWindow
     private:
         LayoutMainWindow *m_layout;
         Menu *m_menu;
+        ToolBar *m_toolBar;
 };
 
 #endif // MAINWINDOW_H
