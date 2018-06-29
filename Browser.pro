@@ -1,18 +1,18 @@
 QT += core gui webenginewidgets widgets
 
 SOURCES += \
-    main.cpp \
-    webpage.cpp \
-    tab.cpp \
-    layoutmainwindow.cpp \
-    toolbar.cpp \
-    menu.cpp \
-    mainwindow.cpp
+    src/main.cpp \
+    src/web/webpage.cpp \
+    src/tab/tab.cpp \
+    src/main/layoutmainwindow.cpp \
+    src/toolbar/toolbar.cpp \
+    src/menu/menu.cpp \
+    src/main/mainwindow.cpp
 
 HEADERS += \
-    webpage.h \
-    tab.h \
-    layoutmainwindow.h \
-    toolbar.h \
-    menu.h \
-    mainwindow.h
+    src/web/webpage.h \
+    src/tab/tab.h \
+    src/main/layoutmainwindow.h \
+    src/toolbar/toolbar.h \
+    src/menu/menu.h \
+    src/main/mainwindow.h

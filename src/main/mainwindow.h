@@ -3,9 +3,9 @@
 
 #include <QMainWindow>
 
-#include "layoutmainwindow.h"
-#include "menu.h"
-#include "toolbar.h"
+#include "main/layoutmainwindow.h"
+#include "menu/menu.h"
+#include "toolbar/toolbar.h"
 
 class MainWindow : public QMainWindow
 {
