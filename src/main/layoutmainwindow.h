@@ -3,7 +3,7 @@
 
 #include <QVBoxLayout>
 
-#include "tab.h"
+#include "tab/tab.h"
 
 class LayoutMainWindow : public QVBoxLayout
 {

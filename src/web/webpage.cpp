@@ -1,4 +1,4 @@
-#include "webpage.h"
+#include "web/webpage.h"
 
 WebPage::WebPage(QWidget *parent) : QWebEngineView(parent)
 {
