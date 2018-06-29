@@ -5,7 +5,7 @@
 #include <QTabWidget>
 #include <QVector>
 
-#include "web/webpage.h"
+#include "src/web/webpage.h"
 
 class Tab : public QTabWidget
 {

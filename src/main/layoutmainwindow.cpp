@@ -1,4 +1,4 @@
-#include "main/layoutmainwindow.h"
+#include "src/main/layoutmainwindow.h"
 
 LayoutMainWindow::LayoutMainWindow(QWidget *parent) : QVBoxLayout(parent)
 {
