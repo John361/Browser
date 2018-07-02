@@ -59,7 +59,7 @@ class Tab : public QTabWidget
          * @brief currentUrlChanged sends WebPage's url of the current tab
          * @param url
          */
-        void currentUrlChanged(QString const& url);
+        void currentUrlChanged(QString const &url);
 };
 
 #endif // TAB_H
