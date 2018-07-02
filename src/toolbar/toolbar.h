@@ -1,6 +1,7 @@
 #ifndef TOOLBAR_H
 #define TOOLBAR_H
 
+#include <QHBoxLayout>
 #include <QLineEdit>
 #include <QToolBar>
 

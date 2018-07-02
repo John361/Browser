@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/reload-icon.png</file>
+        <file>images/previous-icon.png</file>
+        <file>images/next-icon.png</file>
+        <file>images/home-icon.png</file>
+        <file>images/browser-icon.png</file>
+    </qresource>
+</RCC>

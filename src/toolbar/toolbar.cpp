@@ -2,11 +2,18 @@
 
 ToolBar::ToolBar(QWidget *parent) : QToolBar(parent)
 {
-    m_btnPrev = new ButtonToolBar("");
-    m_btnNext = new ButtonToolBar("");
-    m_btnReload = new ButtonToolBar("");
-    m_btnHome = new ButtonToolBar("");
+    m_btnPrev = new ButtonToolBar("", QIcon(":/images/previous-icon.png"));
+    m_btnNext = new ButtonToolBar("", QIcon(":/images/next-icon.png"));
+    m_btnReload = new ButtonToolBar("", QIcon(":/images/reload-icon.png"));
+    m_btnHome = new ButtonToolBar("", QIcon(":/images/home-icon.png"));
     m_lineEdit = new QLineEdit;
+
+    addWidget(m_btnPrev);
+    addWidget(m_btnNext);
+    addWidget(m_btnReload);
+    addWidget(m_btnHome);
+    addWidget(m_lineEdit);
+    setMovable(false);
 
     connect(m_btnPrev, SIGNAL(toggled(QString)), this, SLOT(onBtnToggled(QString)));
 }

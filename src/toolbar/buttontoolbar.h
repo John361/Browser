@@ -8,7 +8,7 @@ class ButtonToolBar : public QPushButton
     Q_OBJECT
 
     public:
-        ButtonToolBar(QString const &link, QWidget *parent = nullptr);
+        ButtonToolBar(QString const &link, QIcon const &icon, QWidget *parent = nullptr);
 
         /**
          * @brief link returns m_link as const

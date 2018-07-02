@@ -1,8 +1,9 @@
 #include "src/toolbar/buttontoolbar.h"
 
-ButtonToolBar::ButtonToolBar(QString const &link, QWidget *parent) : QPushButton(parent)
+ButtonToolBar::ButtonToolBar(QString const &link, QIcon const &icon, QWidget *parent) : QPushButton(icon, QString(), parent)
 {
     m_link = QString(link);
+
     connect(this, SIGNAL(toggled(bool)), this, SLOT(onToggled(bool)));
 }
 

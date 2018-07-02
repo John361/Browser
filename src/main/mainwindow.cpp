@@ -12,4 +12,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     m_toolBar = new ToolBar;
     addToolBar(m_toolBar);
+
+    setWindowIcon(QIcon(":/images/browser-icon.png"));
 }

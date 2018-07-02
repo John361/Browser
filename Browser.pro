@@ -19,4 +19,5 @@ HEADERS += \
     src/main/mainwindow.h \
     src/toolbar/buttontoolbar.h
 
-RESOURCES +=
+RESOURCES += \
+    src/resources/images.qrc
