@@ -11,6 +11,7 @@ Tab::Tab(QWidget *parent) : QTabWidget(parent)
 
     connect(this, SIGNAL(tabBarDoubleClicked(int)), this, SLOT(onDoubleClick(int)));
     connect(this, SIGNAL(tabCloseRequested(int)), this, SLOT(onTabCloseClick(int)));
+    connect(this, SIGNAL(currentChanged(int)), this, SLOT(onCurrentChange(int)));
 }
 
 void Tab::addTab(WebPage *page)

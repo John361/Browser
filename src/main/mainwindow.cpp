@@ -14,4 +14,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     addToolBar(m_toolBar);
 
     setWindowIcon(QIcon(":/images/browser-icon.png"));
+
+    connect(m_layout->tab(), SIGNAL(currentUrlChanged(QString)), m_toolBar->lineEdit(), SLOT(setText(QString)));
+    connect(m_layout->tab(), SIGNAL(currentUrlChanged(QString)), m_toolBar->btnReload(), SLOT(setLink(QString)));
 }

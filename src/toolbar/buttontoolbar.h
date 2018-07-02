@@ -16,14 +16,15 @@ class ButtonToolBar : public QPushButton
          */
         QString link() const;
 
+    private:
+        QString m_link;
+
+    public slots:
         /**
          * @brief setLink sets a value to m_link and disabled it if its empty
          * @param link
          */
         void setLink(QString const &link);
-
-    private:
-        QString m_link;
 
     private slots:
         /**

@@ -8,7 +8,8 @@ SOURCES += \
     src/toolbar/toolbar.cpp \
     src/menu/menu.cpp \
     src/main/mainwindow.cpp \
-    src/toolbar/buttontoolbar.cpp
+    src/toolbar/buttontoolbar.cpp \
+    src/helpers/filehelper.cpp
 
 HEADERS += \
     src/web/webpage.h \
@@ -17,7 +18,11 @@ HEADERS += \
     src/toolbar/toolbar.h \
     src/menu/menu.h \
     src/main/mainwindow.h \
-    src/toolbar/buttontoolbar.h
+    src/toolbar/buttontoolbar.h \
+    src/helpers/filehelper.h
 
 RESOURCES += \
     src/resources/images.qrc
+
+DISTFILES += \
+    src/resources/config.json

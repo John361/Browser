@@ -2,8 +2,7 @@
 
 ButtonToolBar::ButtonToolBar(QString const &link, QIcon const &icon, QWidget *parent) : QPushButton(icon, QString(), parent)
 {
-    m_link = QString(link);
-
+    setLink(link);
     connect(this, SIGNAL(toggled(bool)), this, SLOT(onToggled(bool)));
 }
 
@@ -16,6 +15,8 @@ void ButtonToolBar::setLink(const QString &link)
 {
     m_link = link;
     m_link.isEmpty() ? setDisabled(true) : setDisabled(false);
+
+    setToolTip(tr("Reload the current page"));
 }
 
 void ButtonToolBar::onToggled(bool b)
