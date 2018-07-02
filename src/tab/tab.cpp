@@ -3,7 +3,6 @@
 Tab::Tab(QWidget *parent) : QTabWidget(parent)
 {
     m_pages = new QVector<WebPage*>();
-
     WebPage *page = new WebPage;
     addTab(page);
 
@@ -19,7 +18,15 @@ void Tab::addTab(WebPage *page)
     if (!m_pages->contains(page))
     {
         m_pages->append(page);
-        QTabWidget::addTab(page, page->icon(), page->title());
+        QTabWidget::addTab(page, tr("Loading..."));
+        setCurrentIndex(indexOf(page));
+
+        connect(page, SIGNAL(afterLoadFinished(WId,QString,QIcon)), this, SLOT(afterLoadFinished(WId,QString,QIcon)));
+    }
+
+    else
+    {
+        delete page;
     }
 }
 
@@ -29,17 +36,35 @@ void Tab::onDoubleClick(int i)
     {
         WebPage *page = new WebPage;
         addTab(page);
-
-        setCurrentIndex(count()-1);
     }
 }
 
 void Tab::onTabCloseClick(int i)
 {
+    WebPage *page = qobject_cast<WebPage*>(widget(i));
+    m_pages->remove(i);
     removeTab(i);
+    delete page;
 
     if (tabBar()->count() == 0)
     {
         parentWidget()->parentWidget()->close();
+        delete m_pages;
     }
+}
+
+void Tab::onCurrentChange(int i)
+{
+    if (i != -1)
+    {
+        WebPage *page = qobject_cast<WebPage*>(widget(i));
+        emit currentUrlChanged(page->url().toDisplayString());
+    }
+}
+
+void Tab::afterLoadFinished(WId const &wId, QString const &title, QIcon const &icon)
+{
+    QWidget *page = find(wId);
+    setTabText(indexOf(page), title);
+    setTabIcon(indexOf(page), icon);
 }

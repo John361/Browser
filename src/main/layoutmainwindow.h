@@ -10,6 +10,10 @@ class LayoutMainWindow : public QVBoxLayout
     public:
         LayoutMainWindow(QWidget *parent = nullptr);
 
+        /**
+         * @brief tab returns m_tab
+         * @return
+         */
         Tab *tab() const;
 
     private:

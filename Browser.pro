@@ -18,3 +18,5 @@ HEADERS += \
     src/menu/menu.h \
     src/main/mainwindow.h \
     src/toolbar/buttontoolbar.h
+
+RESOURCES +=
