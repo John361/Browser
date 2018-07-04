@@ -54,6 +54,13 @@ class Tab : public QTabWidget
          */
         void afterLoadFinished(WId const &wid, QString const &title, QIcon const &icon);
 
+        /**
+         * @brief tabIconHasChanged changes tab icon when the a page icon is loaded
+         * @param wid
+         * @param icon
+         */
+        void tabIconHasChanged(WId const &wid, QIcon const &icon);
+
     signals:
         /**
          * @brief currentUrlChanged sends WebPage's url of the current tab

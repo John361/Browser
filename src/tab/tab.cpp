@@ -23,6 +23,7 @@ void Tab::addTab(WebPage *page)
         setCurrentIndex(indexOf(page));
 
         connect(page, SIGNAL(afterLoadFinished(WId,QString,QIcon)), this, SLOT(afterLoadFinished(WId,QString,QIcon)));
+        connect(page, SIGNAL(iconHasChanged(WId,QIcon)), this, SLOT(tabIconHasChanged(WId,QIcon)));
     }
 
     else
@@ -63,11 +64,17 @@ void Tab::onCurrentChange(int i)
     }
 }
 
-void Tab::afterLoadFinished(WId const &wId, QString const &title, QIcon const &icon)
+void Tab::afterLoadFinished(WId const &wid, QString const &title, QIcon const &icon)
 {
-    WebPage *page = qobject_cast<WebPage*>(find(wId));
-    setTabText(indexOf(page), title);
-    setTabIcon(indexOf(page), icon);
+    WebPage *page = qobject_cast<WebPage*>(find(wid));
+    setTabText(m_pages->indexOf(page), title);
+    setTabIcon(m_pages->indexOf(page), icon);
 
     emit currentUrlChanged(page->url().toDisplayString());
+}
+
+void Tab::tabIconHasChanged(WId const &wid, QIcon const &icon)
+{
+    WebPage *page = qobject_cast<WebPage*>(find(wid));
+    setTabIcon(m_pages->indexOf(page), icon);
 }
