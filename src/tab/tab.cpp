@@ -65,7 +65,9 @@ void Tab::onCurrentChange(int i)
 
 void Tab::afterLoadFinished(WId const &wId, QString const &title, QIcon const &icon)
 {
-    QWidget *page = find(wId);
+    WebPage *page = qobject_cast<WebPage*>(find(wId));
     setTabText(indexOf(page), title);
     setTabIcon(indexOf(page), icon);
+
+    emit currentUrlChanged(page->url().toDisplayString());
 }
