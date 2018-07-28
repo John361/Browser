@@ -2,10 +2,10 @@
 
 ToolBar::ToolBar(QWidget *parent) : QToolBar(parent)
 {
-    m_btnPrev = new ButtonToolBar("", QIcon(":/images/previous-icon.png"));
-    m_btnNext = new ButtonToolBar("", QIcon(":/images/next-icon.png"));
-    m_btnReload = new ButtonToolBar("", QIcon(":/images/reload-icon.png"));
-    m_btnHome = new ButtonToolBar("", QIcon(":/images/home-icon.png"));
+    m_btnPrev = new ButtonToolBar("", QIcon(":/images/previous-icon.png"), tr("Previous page"));
+    m_btnNext = new ButtonToolBar("", QIcon(":/images/next-icon.png"), tr("Next page"));
+    m_btnReload = new ButtonToolBar("", QIcon(":/images/reload-icon.png"), tr("Reload page"));
+    m_btnHome = new ButtonToolBar("", QIcon(":/images/home-icon.png"), tr("Home page"));
     m_lineEdit = new QLineEdit;
 
     addWidget(m_btnPrev);

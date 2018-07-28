@@ -8,7 +8,7 @@ class ButtonToolBar : public QPushButton
     Q_OBJECT
 
     public:
-        ButtonToolBar(QString const &link, QIcon const &icon, QWidget *parent = nullptr);
+        ButtonToolBar(QString const &link, QIcon const &icon, QString const &tooltip, QWidget *parent = nullptr);
 
         /**
          * @brief link returns m_link as const
@@ -23,8 +23,9 @@ class ButtonToolBar : public QPushButton
         /**
          * @brief setLink sets a value to m_link and disabled it if its empty
          * @param link
+         * @param tooltip
          */
-        void setLink(QString const &link);
+        void setLink(QString const &link, const QString &tooltip = "");
 
     private slots:
         /**
